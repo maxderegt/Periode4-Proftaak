@@ -3,7 +3,7 @@
 // Enum which will indicate the functionality of a Component
 enum ComponentID
 {
-
+	GUI_COMPONENT
 };
 
 class Component

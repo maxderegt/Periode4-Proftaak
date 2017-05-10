@@ -43,6 +43,12 @@
     <Filter Include="Header Files\Components">
       <UniqueIdentifier>{e6682769-1283-4e33-960c-ff00774e6bc5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Components\GUI">
+      <UniqueIdentifier>{bc95da28-afd9-4323-b4af-0b2a10ede7ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components\GUI">
+      <UniqueIdentifier>{c4b2b699-7c3e-4cef-ae0f-e497ace514db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -72,6 +78,12 @@
     <ClCompile Include="Vec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GUIComponent.cpp">
+      <Filter>Source Files\Components\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\Components\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Model.h">
@@ -95,5 +107,31 @@
     <ClInclude Include="Vec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GUIComponent.h">
+      <Filter>Header Files\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIElement.h">
+      <Filter>Header Files\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Components\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Button.psd">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Assets\GUI-Design.psd">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Assets\LifeBar.psd">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Assets\LifeFrame.psd">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Assets\LifeFrameSegment.psd">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
