@@ -37,6 +37,30 @@
     <Filter Include="Source Files\GameObjects">
       <UniqueIdentifier>{d4976496-9021-491c-93b9-42d7fb0576ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Lanes">
+      <UniqueIdentifier>{c2f14859-e4a3-4b78-9f19-32712f107464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{a1333fcc-87b2-494a-ab23-f4d9ad4a0c0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Score">
+      <UniqueIdentifier>{37bd51cf-db2d-4768-85be-665761ad058d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{9dd1b347-790b-4e09-80bd-c5baced5a6ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lanes">
+      <UniqueIdentifier>{25c3414b-1742-4321-b3ae-dcb8e519a5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Score">
+      <UniqueIdentifier>{614e0ca1-c9e5-4b12-9e1a-d96a68b9b731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{2e85ee14-1ddf-481c-8bda-9eac2936b1dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{bdfa273e-8ae7-499f-a859-b01f2ab52db1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{2f30e23f-79ce-43e6-98ed-f7933dc88984}</UniqueIdentifier>
     </Filter>
@@ -49,16 +73,28 @@
     <Filter Include="Header Files\Components\GUI">
       <UniqueIdentifier>{c4b2b699-7c3e-4cef-ae0f-e497ace514db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Json">
+      <UniqueIdentifier>{6fb1ecfd-49ca-4aec-8583-b84930eb62f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{490b45c6-5e90-46b4-a5dd-74bc97ce03e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factory">
+      <UniqueIdentifier>{6b5dfa85-6916-413d-bab2-cd3cfda1f728}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files\Model</Filter>
+    <ClCompile Include="Lanes.cpp">
+      <Filter>Source Files\Lanes</Filter>
     </ClCompile>
     <ClCompile Include="View.cpp">
       <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Control</Filter>
@@ -84,22 +120,46 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files\Components\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="ScoreBoard.cpp">
+      <Filter>Source Files\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreComponent.cpp">
+      <Filter>Source Files\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshDrawComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Model.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
     <ClInclude Include="View.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
-    <ClInclude Include="Lanes.h">
+    <ClInclude Include="Model.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files\GameObjects</Filter>
+    <ClInclude Include="Lanes.h">
+      <Filter>Header Files\Lanes</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Header Files\View</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Header Files\Components</Filter>
@@ -115,6 +175,42 @@
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBoard.h">
+      <Filter>Header Files\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreComponent.h">
+      <Filter>Header Files\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshDrawComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files\Json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@ GUIComponent::GUIComponent() : Component(GUI_COMPONENT)
 {
 }
 
-void GUIComponent::LateUpdate(int DeltaTime)
+void GUIComponent::LateUpdate(float DeltaTime)
 {
 	//UPDATE GUI, CHECK FOR INPUT
 	for (GUIElement element : _elements)

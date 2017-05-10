@@ -1,52 +1,75 @@
+#include "Component.h"
 #include "Model.h"
 #include "View.h"
 #include "Lanes.h"
 #include "GUIComponent.h"
 #include "GUIElement.h"
 #include "Text.h"
+#include "ScoreBoard.h"
+#include "ScoreComponent.h"
 
 #include <GL\freeglut.h>
+#include "Lanes.h"
+#include "Input.h"
+#include "CameraComponent.h"
 
 Model model;
 View view;
 GUIComponent GUI;
 unsigned int fps = 20;
 
-// The displayFunc which will call the update of the view
+// The displayFunc which will call the UpdateView of the view
 // This function should only be called by OpenGL and NOT manually
-void display()
+void window()
 {
-	view.update();
+    view.UpdateView();
+	GUI.Draw(0);
 }
 
 // The reshapeFunc which will call the reshape of the view
 // This function should only be called by OpenGL and NOT manually
 void reshape(int w, int h)
 {
-	view.reshape(w, h);
+    
 }
 
-// The idleFunc which will call the update of the model
+// The idleFunc which will call the UpdateView of the model
 // This function should only be called by OpenGL and NOT manually
 void idle()
 {
-	model.update();
-	GUI.Draw(0);
+    model.update();
 }
 
+
 int main(int argc, char* argv[]) {
-	glutInit(&argc, argv);
-	model = Model();
-	view = View(&model);
+
+    view = View(&model, argc, argv);
+    // Call the test object initialiser 
+    // For testing...
+    // can be removed if testing is not necessary
+    model.InitTestObjects();
+
+    // Call the regular model init
+    // this will initialise the game
+    // do NOT remove
+    model.Init();
+
+
 	GUI = GUIComponent();
 	Vec3f pos = Vec3f(0, 0, 0);
 	Text fpstext = Text(pos, "fps", &fps);
 	GUI.AddElement(fpstext);
 
-	glutDisplayFunc(display);
-	glutReshapeFunc(reshape);
-	glutIdleFunc(idle);
+    glutDisplayFunc(window);
+    glutReshapeFunc(reshape);
+    glutIdleFunc(idle);
+    glutKeyboardFunc(Keyboard::KeyBoardDown);
+    glutKeyboardUpFunc(Keyboard::KeyBoardUp);
+    glutSpecialFunc(Keyboard::SKeyboardDown);
+    glutSpecialUpFunc(Keyboard::SKeyboardUp);
+    glutPassiveMotionFunc(Mouse::MoveMouse);
 
-	glutMainLoop();
-	return 0;
+
+    glutMainLoop();
+    return 0;
 }

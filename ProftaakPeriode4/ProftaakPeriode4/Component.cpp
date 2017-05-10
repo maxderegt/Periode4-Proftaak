@@ -3,6 +3,7 @@
 Component::Component(ComponentID id)
 {
 	_id = id;
+	_parent = nullptr;
 }
 
 Component::~Component()
@@ -10,10 +11,15 @@ Component::~Component()
 	// TODO destructor stuff
 }
 
-void Component::Update(int deltaTime)
+void Component::Update(float deltaTime)
 {
 }
 
-void Component::LateUpdate(int deltaTime)
+void Component::LateUpdate(float deltaTime)
 {
+}
+
+void Component::SetParent(GameObject* parent)
+{
+	_parent = parent;
 }
