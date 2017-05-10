@@ -15,7 +15,6 @@
 
 Model model;
 View view;
-GUIComponent GUI;
 unsigned int fps = 20;
 
 // The displayFunc which will call the UpdateView of the view
@@ -23,10 +22,6 @@ unsigned int fps = 20;
 void window()
 {
     view.UpdateView();
-	
-	
-	
-	GUI.Draw(0);
 }
 
 // The reshapeFunc which will call the reshape of the view
@@ -55,14 +50,7 @@ int main(int argc, char* argv[]) {
     // Call the regular model init
     // this will initialise the game
     // do NOT remove
-    model.Init();
-
-
-	GUI = GUIComponent();
-	Vec3f pos = Vec3f(10, 10, 02);
-	Vec3f col = Vec3f(1, 0, 0);
-	Text fpstext = Text(pos, col, "fps", &fps);
-	GUI.AddElement(&fpstext);
+	model.Init();
 
     glutDisplayFunc(window);
     glutReshapeFunc(reshape);

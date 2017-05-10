@@ -12,7 +12,7 @@ class Text : public GUIElement
 public:
 	Text(Vec3f pos, Vec3f col, std::string text);
 	Text(Vec3f pos, Vec3f col, std::string text, unsigned int * value);
-	void Draw(int DeltaTime) override;
+	void Draw() override;
 
 private:
 	Vec3f _color;

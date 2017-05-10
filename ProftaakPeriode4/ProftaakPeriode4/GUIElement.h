@@ -17,7 +17,7 @@ public:
 		_visible = obj._visible;
 	};
 	//Constructor of GUIElement
-	GUIElement(Vec3f position) { _position = position; };
+	GUIElement(Vec3f position) { _position = position; _enabled = true; };
 	//Sets _visible to true making the GUIElement visible.
 	void Show() { _visible = true; };
 	//Sets _visible to false making the GUIElement invisible.
@@ -31,7 +31,7 @@ public:
 	//Gets the position of the GUIElement.
 	Vec3f GetPosition() { return _position; };
 	//Draws the GUIElement if visible
-	virtual void Draw(int DeltaTime)=0;
+	virtual void Draw() {};
 	//Update function for handling events by user
 	virtual void Update() {};
 

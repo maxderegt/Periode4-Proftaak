@@ -2,15 +2,16 @@
 #include "Component.h"
 #include <vector>
 #include "GUIElement.h"
+#include "DrawComponent.h"
 
-class GUIComponent:Component
+class GUIComponent: public DrawComponent
 {
 public:
 	GUIComponent();
 	~GUIComponent() {};
 
 	void LateUpdate(float deltaTime) override;
-	void Draw(int DeltaTime);
+	void Draw() override;
 
 	void AddElement(GUIElement * element);
 

@@ -1,22 +1,23 @@
 #include "GUIComponent.h"
 
-GUIComponent::GUIComponent() : Component(GUI_COMPONENT)
+GUIComponent::GUIComponent()
 {
+
 }
 
 void GUIComponent::LateUpdate(float DeltaTime)
 {
-	//UPDATE GUI, CHECK FOR INPUT
+//	//UPDATE GUI, CHECK FOR INPUT
 	for (GUIElement * element : _elements)
 	{
 		element->Update();
 	}
 }
 
-void GUIComponent::Draw(int DeltaTime) {
+void GUIComponent::Draw() {
 	for (GUIElement * element : _elements)
 	{
-		element->Draw(0);
+		element->Draw();
 	}
 }
 

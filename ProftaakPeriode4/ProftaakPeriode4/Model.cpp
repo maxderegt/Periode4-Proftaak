@@ -5,6 +5,8 @@
 #include <iostream>
 #include "MeshDrawComponent.h"
 #include "MeshFactory.h"
+#include "GUIComponent.h"
+#include "Text.h"
 
 Model::Model()
 {
@@ -24,7 +26,7 @@ void Model::update()
 	// Calculate and display fps
 	// For performance profiling only
 	// should normally be commented
-//	int fps = int(1.0 / deltaTime);
+	fps = int(1.0 / deltaTime);
 //	std::cout << "Fps: " << fps << "DT: " << deltaTime << std::endl;
 
 	// Call the Update of every GameObject
@@ -60,6 +62,19 @@ void Model::InitTestObjects()
 	testObject->AddComponent(drawComponent);
 
 	_gameObjects.push_back(testObject);
+
+
+	
+	GameObject * guiOb = new GameObject();
+	GUIComponent * GUI = new GUIComponent();
+	Vec3f pos = Vec3f(10, 10, 02);
+	Vec3f col = Vec3f(1, 0, 0);
+	Text * fpstext = new Text(pos, col, "fps ", &fps);
+	pos.y++;
+	GUI->AddElement(fpstext);
+	guiOb->AddComponent(GUI);
+
+	_gameObjects.push_back(guiOb);
 }
 
 void Model::Init()
