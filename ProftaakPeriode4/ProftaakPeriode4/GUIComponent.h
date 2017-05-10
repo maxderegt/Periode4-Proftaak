@@ -7,14 +7,14 @@ class GUIComponent:Component
 {
 public:
 	GUIComponent();
-	~GUIComponent();
+	~GUIComponent() {};
 
 	void LateUpdate(float deltaTime) override;
 	void Draw(int DeltaTime);
 
-	void AddElement(GUIElement element);
+	void AddElement(GUIElement * element);
 
-	std::vector<GUIElement> _elements;
+	std::vector<GUIElement *> _elements;
 
 private:
 

@@ -2,20 +2,32 @@
 #include <iostream>
 #include <sstream>
 
-Text::Text(Vec3f pos, std::string text) : GUIElement(pos)
+Text::Text(Vec3f pos, Vec3f col, std::string text) : GUIElement(pos)
 {
-	
+	_color = col;
 	_text = text;
 }
 
-Text::Text(Vec3f pos, std::string text, unsigned int * value) : GUIElement(pos)
+Text::Text(Vec3f pos, Vec3f col, std::string text, unsigned int * value) : GUIElement(pos)
 {
+	_color = col;
 	_text = text;
 	_value = value;
 }
 
 void Text::Draw(int DeltaTime) {
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	glOrtho(0.0, 800, 600, 0.0, -1.0, 10.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glClear(GL_DEPTH_BUFFER_BIT);
+
+	glPushAttrib(GL_CURRENT_BIT);
+	glColor3f(_color.x,_color.y,_color.z);
 	Sprint();
+	glPopAttrib();
 }
 
 // This prints a string to the screen
@@ -23,9 +35,9 @@ void Text::Sprint()
 {
 	int l, i;
 	Vec3f pos = GetPosition();
-	std::string temp = _text;
+	std::string temp = _text + " ";
 	if (_value != nullptr) {
-		temp = SSTR(_value);
+		temp = SSTR(temp << *_value);
 	}
 	const char *st = temp.c_str();
 	l = strlen(st); // see how many characters are in text string.

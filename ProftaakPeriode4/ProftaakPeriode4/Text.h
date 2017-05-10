@@ -10,8 +10,8 @@
 class Text : public GUIElement
 {	
 public:
-	Text(Vec3f pos, std::string text);
-	Text(Vec3f pos, std::string text, unsigned int * value);
+	Text(Vec3f pos, Vec3f col, std::string text);
+	Text(Vec3f pos, Vec3f col, std::string text, unsigned int * value);
 	void Draw(int DeltaTime) override;
 
 private:

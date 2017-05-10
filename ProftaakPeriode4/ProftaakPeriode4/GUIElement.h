@@ -1,5 +1,6 @@
 #pragma once
 #include "Vec.h"
+#include <iostream>
 
 /*
 	Class : GUIElement
@@ -30,7 +31,7 @@ public:
 	//Gets the position of the GUIElement.
 	Vec3f GetPosition() { return _position; };
 	//Draws the GUIElement if visible
-	virtual void Draw(int DeltaTime);
+	virtual void Draw(int DeltaTime)=0;
 	//Update function for handling events by user
 	virtual void Update() {};
 

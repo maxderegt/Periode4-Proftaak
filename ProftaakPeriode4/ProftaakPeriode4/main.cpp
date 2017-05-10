@@ -23,6 +23,9 @@ unsigned int fps = 20;
 void window()
 {
     view.UpdateView();
+	
+	
+	
 	GUI.Draw(0);
 }
 
@@ -30,7 +33,7 @@ void window()
 // This function should only be called by OpenGL and NOT manually
 void reshape(int w, int h)
 {
-    
+	
 }
 
 // The idleFunc which will call the UpdateView of the model
@@ -56,9 +59,10 @@ int main(int argc, char* argv[]) {
 
 
 	GUI = GUIComponent();
-	Vec3f pos = Vec3f(0, 0, 0);
-	Text fpstext = Text(pos, "fps", &fps);
-	GUI.AddElement(fpstext);
+	Vec3f pos = Vec3f(10, 10, 02);
+	Vec3f col = Vec3f(1, 0, 0);
+	Text fpstext = Text(pos, col, "fps", &fps);
+	GUI.AddElement(&fpstext);
 
     glutDisplayFunc(window);
     glutReshapeFunc(reshape);
