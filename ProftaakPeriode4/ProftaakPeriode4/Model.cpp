@@ -68,10 +68,11 @@ void Model::InitTestObjects()
 
 	GameObject * laneGenerator = new GameObject();
 	std::vector<Mesh*> meshes;
-	meshes.push_back(LoadMeshFile("Assets//Models//TestCube//Cube.Cobj"));
+	meshes.push_back(LoadMeshFile("Assets//Models//Lane//lanePart.Cobj"));
 
-	DrawComponent * laneDrawComponent = new LaneGeneratorComponent(3, 30, meshes);
+	LaneGeneratorComponent * laneDrawComponent = new LaneGeneratorComponent(3,10, meshes);
 	laneGenerator->AddComponent(laneDrawComponent);
+	laneDrawComponent->PlaceObstacleFullyRandom(LoadMeshFile("Assets//Models//TestCube//Cube.Cobj"));
 	_gameObjects.push_back(laneGenerator);
 
 
