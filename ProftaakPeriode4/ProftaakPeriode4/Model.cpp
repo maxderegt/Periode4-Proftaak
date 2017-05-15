@@ -6,7 +6,12 @@
 #include "MeshDrawComponent.h"
 #include "MeshFactory.h"
 #include "GUIComponent.h"
+
+//for testing purposes only, comment/delete when finished
 #include "Text.h"
+Text fpstext;
+#include "LifeBar.h"
+LifeBar Lifebar;
 
 Model::Model()
 {
@@ -26,7 +31,7 @@ void Model::update()
 	// Calculate and display fps
 	// For performance profiling only
 	// should normally be commented
-	fps = int(1.0 / deltaTime);
+	fpstext.Update("fps " + to_string((int)(1.0/deltaTime)));	
 //	std::cout << "Fps: " << fps << "DT: " << deltaTime << std::endl;
 
 	// Call the Update of every GameObject
@@ -67,11 +72,22 @@ void Model::InitTestObjects()
 	
 	GameObject * guiOb = new GameObject();
 	GUIComponent * GUI = new GUIComponent();
+
+	//for testing purposes only, comment/delete when finished
+	//example of GUI text
 	Vec3f pos = Vec3f(10, 10, 02);
 	Vec3f col = Vec3f(1, 0, 0);
-	Text * fpstext = new Text(pos, col, "fps ", &fps);
-	pos.y++;
-	GUI->AddElement(fpstext);
+	fpstext = Text(pos, col);
+	GUI->AddElement(&fpstext);
+	//example of lifebar
+	Vec3f pos2 = Vec3f(10, 10, 0);
+	std::vector<std::string> paths{ "Assets/LifeFrameBackground.psd", "Assets/LifeBar.psd", "Assets/LifeFrameSegment.psd", "Assets/LifeFrame.psd"};
+	Lifebar = LifeBar(pos2, 600.0f, 50.0f, paths, 4, 3);
+	GUI->AddElement(&Lifebar);
+	Lifebar.Decrement();
+	Lifebar.Decrement();
+
+
 	guiOb->AddComponent(GUI);
 
 	_gameObjects.push_back(guiOb);

@@ -16,8 +16,10 @@ public:
 		_enabled = obj._enabled;
 		_visible = obj._visible;
 	};
+	//Default constructor
+	GUIElement() { _enabled = true; _visible = true; };
 	//Constructor of GUIElement
-	GUIElement(Vec3f position) { _position = position; _enabled = true; };
+	GUIElement(Vec3f position) { _position = position; _enabled = true; _visible = true; };
 	//Sets _visible to true making the GUIElement visible.
 	void Show() { _visible = true; };
 	//Sets _visible to false making the GUIElement invisible.
@@ -35,7 +37,7 @@ public:
 	//Update function for handling events by user
 	virtual void Update() {};
 
-private:
+protected:
 	//float vector for positioning GUIElement
 	Vec3f _position;
 	//bool _enabled for allowing change, bool _visible for allowing visibility.

@@ -148,9 +148,11 @@
     <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GUIComponent.cpp" />
+    <ClCompile Include="Image.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Lanes.cpp" />
+    <ClCompile Include="LifeBar.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MeshDrawComponent.cpp" />
@@ -164,7 +166,9 @@
     <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Image.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="LifeBar.h" />
     <ClInclude Include="ScoreComponent.h" />
     <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="Component.h" />
@@ -190,6 +194,7 @@
     <None Include="Assets\GUI-Design.psd" />
     <None Include="Assets\LifeBar.psd" />
     <None Include="Assets\LifeFrame.psd" />
+    <None Include="Assets\LifeFrameBackground.psd" />
     <None Include="Assets\LifeFrameSegment.psd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
