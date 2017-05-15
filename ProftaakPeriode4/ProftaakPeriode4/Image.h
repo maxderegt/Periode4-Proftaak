@@ -2,7 +2,7 @@
 #include "GUIElement.h"
 #include <GL/freeglut.h>
 #include <vector>
-#include "TextureLoader.h"
+#include "Texture.h"
 /*
 Class : Image
 A Image is a subclass of GUIElement

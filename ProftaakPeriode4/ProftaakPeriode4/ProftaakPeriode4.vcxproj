@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CameraComponent.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GUIComponent.cpp" />
     <ClCompile Include="Image.cpp" />
@@ -153,6 +155,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Lanes.cpp" />
     <ClCompile Include="LifeBar.cpp" />
+    <ClCompile Include="LaneGeneratorComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MeshDrawComponent.cpp" />
@@ -161,14 +164,19 @@
     <ClCompile Include="MeshFactory.cpp" />
     <ClCompile Include="ScoreComponent.cpp" />
     <ClCompile Include="ScoreBoard.cpp" />
-    <ClCompile Include="TextureLoader.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vec.cpp" />
+    <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Image.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="LifeBar.h" />
+    <ClInclude Include="AlpaBlend.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionComponent.h" />
+    <ClInclude Include="LaneGeneratorComponent.h" />
     <ClInclude Include="ScoreComponent.h" />
     <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="Component.h" />
@@ -185,8 +193,9 @@
     <ClInclude Include="MeshFactory.h" />
     <ClInclude Include="ScoreBoard.h" />
     <ClInclude Include="stb_image.h" />
-    <ClInclude Include="TextureLoader.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Vec.h" />
+    <ClInclude Include="Vertex.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>

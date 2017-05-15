@@ -5,6 +5,9 @@
 #include <iostream>
 #include "MeshDrawComponent.h"
 #include "MeshFactory.h"
+#include "LaneGeneratorComponent.h"
+#include "CollisionComponent.h"
+#include "Collision.h"
 #include "GUIComponent.h"
 
 //for testing purposes only, comment/delete when finished
@@ -40,6 +43,8 @@ void Model::update()
 		gameObject->Update(deltaTime);
 	}
 
+	Collision::CheckCollision(_gameObjects);
+
 	// Call the LateUpdate of every Gameobject afterwards
 	for(GameObject * gameObject : _gameObjects)
 	{
@@ -56,17 +61,18 @@ void Model::InitTestObjects()
 	_lastTime = 0;
 
 	GameObject * camera = new GameObject();
-	CameraComponent * cameraComponent = new CameraComponent(1280.0f, 720.0f, 0.1f, 30.0f, 90.0f);
+	CameraComponent * cameraComponent = new CameraComponent(1280.0f, 720.0f, 0.1f, 300.0f, 90.0f);
 	camera->AddComponent(cameraComponent);
 
 	_gameObjects.push_back(camera);
 
-	GameObject * testObject = new GameObject();
-	DrawComponent * drawComponent = new MeshDrawComponent(LoadMeshFile("Assets//Models//TestCube//Cube.Cobj"));
-	testObject->_position.z -= 3;
-	testObject->AddComponent(drawComponent);
+	GameObject * laneGenerator = new GameObject();
+	std::vector<Mesh*> meshes;
+	meshes.push_back(LoadMeshFile("Assets//Models//TestCube//Cube.Cobj"));
 
-	_gameObjects.push_back(testObject);
+	DrawComponent * laneDrawComponent = new LaneGeneratorComponent(3, 30, meshes);
+	laneGenerator->AddComponent(laneDrawComponent);
+	_gameObjects.push_back(laneGenerator);
 
 
 	
@@ -85,12 +91,12 @@ void Model::InitTestObjects()
 	Lifebar = LifeBar(pos2, 600.0f, 50.0f, paths, 4, 3);
 	GUI->AddElement(&Lifebar);
 	Lifebar.Decrement();
-	Lifebar.Decrement();
 
 
 	guiOb->AddComponent(GUI);
 
 	_gameObjects.push_back(guiOb);
+
 }
 
 void Model::Init()

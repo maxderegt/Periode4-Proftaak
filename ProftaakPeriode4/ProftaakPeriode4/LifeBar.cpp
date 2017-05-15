@@ -36,7 +36,8 @@ void LifeBar::Decrement()
 {
 	if (_Life > 0) {
 		_Life--;
-		_Images[1].SetWidth(_Width / _Sections*_Life - _Width / 110);
+		if(_Life == 0) _Images[1].SetWidth(_position.x- _Width / 110);
+		else _Images[1].SetWidth(_Width / _Sections*_Life - _Width / 110);
 	}
 }
 
