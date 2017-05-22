@@ -58,13 +58,6 @@ void Model::update()
 	glutPostRedisplay();
 }
 
-
-void test() {
-	while (true) {
-		cout << "test" << endl;
-	}
-}
-
 void Model::InitTestObjects()
 {
 	// Test GameObjects
