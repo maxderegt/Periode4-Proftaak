@@ -58,13 +58,6 @@ void Model::update()
 	glutPostRedisplay();
 }
 
-
-void test() {
-	while (true) {
-		cout << "test" << endl;
-	}
-}
-
 void Model::InitTestObjects()
 {
 	// Test GameObjects
@@ -85,7 +78,6 @@ void Model::InitTestObjects()
 	laneGenerator->AddComponent(laneDrawComponent);
 	laneDrawComponent->PlaceObstacleFullyRandom(LoadMeshFile("Assets//Models//TestCube//Cube.Cobj"));
 	_gameObjects.push_back(laneGenerator);
-
 
 	
 	GameObject * guiOb = new GameObject();

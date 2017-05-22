@@ -46,7 +46,16 @@ public:
 	 * Cannot be initialized with name and texture because not known when created (see MeshFactory.h)
 	 */
 	MaterialInfo();
-	;
+	union material
+	{
+		struct {
+			float _dr, _dg, _db;
+			float _ar, _ag, _ab;
+			float _sr, _sg, _sb;
+		};
+		float _v[9];
+	};
+	material _material;
 	string _name;
 	Texture * _texture;
 };

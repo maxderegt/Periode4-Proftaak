@@ -126,12 +126,21 @@ void LoadMaterialFile(const std::string &fileName, const std::string &dirName, I
 		} 
 		else if (params[0] == "kd")
 		{//TODO, diffuse color
+			currentMaterial->_material._dr = strtof(params[1].c_str(), 0);
+			currentMaterial->_material._dg = strtof(params[2].c_str(), 0);
+			currentMaterial->_material._db = strtof(params[3].c_str(), 0);
 		}
 		else if (params[0] == "ka")
 		{//TODO, ambient color
+			currentMaterial->_material._ar = strtof(params[1].c_str(), 0);
+			currentMaterial->_material._ag = strtof(params[2].c_str(), 0);
+			currentMaterial->_material._ab = strtof(params[3].c_str(), 0);
 		}
 		else if (params[0] == "ks")
 		{//TODO, specular color
+			currentMaterial->_material._sr = strtof(params[1].c_str(), 0);
+			currentMaterial->_material._sg = strtof(params[2].c_str(), 0);
+			currentMaterial->_material._sb = strtof(params[3].c_str(), 0);
 		}
 		else if (
 			params[0] == "illum" || 

@@ -111,6 +111,13 @@ void Mesh::Draw(Vec3f position, Vec3f rotation, float rotationAngle)
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
 		glBindTexture(GL_TEXTURE_2D, group._material->_texture->_id);
+		//May the .mtl file not have the diffuse/ambient/specular dont draw them
+		if(group._material->_material._v[0] > -1.0f)
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, ((float*)group._material->_material._v));
+		if (group._material->_material._v[3] > -1.0f)
+			glMaterialfv(GL_FRONT, GL_AMBIENT, ((float*)group._material->_material._v+3));
+		if (group._material->_material._v[6] > -1.0f)
+			glMaterialfv(GL_FRONT, GL_SPECULAR, ((float*)group._material->_material._v+6));
 
 		glVertexPointer(3, GL_FLOAT, sizeof(float) * 8, ((float*)group._vertices.data()));
 		glNormalPointer(GL_FLOAT, sizeof(float) * 8, ((float*)group._vertices.data()) + 5);
