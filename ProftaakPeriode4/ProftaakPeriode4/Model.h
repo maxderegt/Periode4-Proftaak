@@ -29,7 +29,6 @@ public:
     std::vector<GameObject*> _gameObjects;
 
 	void play(int i);
-
 private:
 
 	// The last time a frame was rendered in milliseconds

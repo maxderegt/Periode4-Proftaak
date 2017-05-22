@@ -19,7 +19,6 @@ Text fpstext;
 LifeBar Lifebar; 
 Sound backgroundMusic;
 
-
 Model::Model()
 {
 	_lastTime = 0;

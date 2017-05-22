@@ -23,7 +23,6 @@ void GUIComponent::Draw() {
 	{
 		element->Draw();
 	}
-
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 }
