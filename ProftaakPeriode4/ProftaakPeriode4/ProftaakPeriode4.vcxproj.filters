@@ -165,9 +165,6 @@
     <ClCompile Include="CollisionComponent.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="Lanes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files\SFX</Filter>
     </ClCompile>
@@ -256,9 +253,6 @@
     </ClInclude>
     <ClInclude Include="CollisionComponent.h">
       <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Lanes.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Header Files\SFX</Filter>
